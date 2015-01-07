@@ -8,9 +8,9 @@
  * @support     support@arearesearch.co.jp
  * @author      Ken Nakanishi <ken@arearesearch.co.jp>
  * @package     DocodocoJP
- * @version     1.0.0
- * @last update 2011/08/29
- * @ruby version 1.8.5
+ * @version     1.1.0
+ * @last update 2014/12/02
+ * @ruby version 1.8.5, 2.1.5
  * @license     GNU Lesser General Public License (LGPL)
  */
 =end //comment
@@ -42,9 +42,10 @@ class DocodocoJP
     @hashStatus = {"code"=>"", "message"=>""}
     @charset = "UTF-8"
 
-    request_path = "/v3/user_info?key1=#{apikey1}&key2=#{apikey2}"
+    request_path = "/v4/user_info?key1=#{apikey1}&key2=#{apikey2}"
     xmldoc = api_access( request_path )
-    if( xmldoc.elements['/docodoco/user_status'].get_text != "201" ) then
+    if( xmldoc.elements['/docodoco/user_status'].get_text != "200" ) and
+      ( xmldoc.elements['/docodoco/user_status'].get_text != "201" ) then
       raise xmldoc.elements['/docodoco/user_status_message'].get_text.to_s
     end
 
@@ -61,7 +62,7 @@ class DocodocoJP
   def GetAttribute()
     return( FALSE )  if( @apikey1.length * @apikey2.length == 0 )
 
-    request_path  = "/v3/search?key1=#{@apikey1}&key2=#{@apikey2}"
+    request_path  = "/v4/search?key1=#{@apikey1}&key2=#{@apikey2}"
     if( @targetIP != "" ) then
       request_path += "&ip=#{@targetIP}"
     end

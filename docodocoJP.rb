@@ -4,14 +4,14 @@
  * File:        docodocoJP.rb
  * 
  * @link        http://www.docodoco.jp
- * @copyright   2011 - Cyber Area Research,Inc.
+ * @copyright   2011-2015 Cyber Area Research,Inc.
  * @support     support@arearesearch.co.jp
  * @author      Ken Nakanishi <ken@arearesearch.co.jp>
  * @package     DocodocoJP
- * @version     1.1.0
- * @last update 2014/12/02
+ * @version     1.1.1
+ * @last update 2015/7/15
  * @ruby version 1.8.5, 2.1.5
- * @license     GNU Lesser General Public License (LGPL)
+ * @license     MIT License
  */
 =end //comment
 
